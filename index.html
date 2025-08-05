@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather Web Application</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="particles"></div>
+
+  <!-- Main Page -->
+  <div class="center-wrapper" id="mainPageWrapper">
+    <div class="container" id="mainPage">
+      <h1>🌦 Weather Now</h1>
+      <input type="text" id="cityInput" placeholder="Enter city name" autocomplete="off" />
+      <button id="getWeatherBtn">Get Weather</button><br />
+      <button id="toggleHistoryBtn">📜 Show Search History</button>
+      <ul id="searchHistoryList" style="display:none;"></ul>
+      <button id="clearHistoryBtn" style="display:none; margin-top: 5px;">🗑 Clear History</button>
+
+      <!-- Theme toggle slider -->
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="themeToggleCheckbox" />
+          <span class="slider round"></span>
+        </label>
+        <span id="themeLabel">Light Theme</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Page -->
+  <div class="center-wrapper" style="display:none;" id="resultsPageWrapper">
+    <div class="container" id="resultsPage">
+      <div id="weatherResult" class="fade-in"></div>
+
+      <h2 id="hourlyTitle" style="display:none;">Hourly Forecast</h2>
+      <div id="hourlyForecast" class="forecast-container" style="display:none;"></div>
+
+      <h2 id="dailyTitle" style="display:none;">5-Day Forecast</h2>
+      <div id="dailyForecast" class="forecast-container" style="display:none;"></div>
+
+      <button id="backBtn">🏠 Back to Main Page</button>
+    </div>
+  </div>
+
+  <!-- Confirmation modal -->
+  <div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <p>Are you sure you want to clear your search history?</p>
+      <button id="confirmClearBtn">Yes, clear</button>
+      <button id="cancelClearBtn">Cancel</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
